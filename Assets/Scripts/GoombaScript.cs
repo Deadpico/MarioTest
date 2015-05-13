@@ -46,7 +46,8 @@ public class GoombaScript : MonoBehaviour {
     void dies()
     {
         anim.SetBool("Stomped", true);
-        Destroy(this.gameObject, 0.5f);
         gameObject.tag = "Nautralized";
+        Destroy(this.gameObject, 0.5f);
+        
     }
 }

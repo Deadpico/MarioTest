@@ -4,9 +4,11 @@ using System.Collections;
 public class BoxTrigger : MonoBehaviour {
 
     public QuestionBlock block;
-    public GameObject coinPrefab;
+    public GameObject Prefab;
     public int numberOfCoins;
+    public GameObject target;
 
+    private Transform _t;
     private int numberOfHits;
     private SmallCoin Coin;
     private float coinX = -0.722f;
@@ -17,6 +19,7 @@ public class BoxTrigger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        _t = target.transform;
 	}
 	
 	// Update is called once per frame
@@ -31,7 +34,7 @@ public class BoxTrigger : MonoBehaviour {
                 numberOfHits++;
 
                 if(numberOfHits <= numberOfCoins){
-                Instantiate(coinPrefab, new Vector2(coinX, coinY), transform.rotation);
+                Instantiate(Prefab, new Vector2(_t.position.x, _t.position.y+0.2f), transform.rotation);
                 gameObject.tag = "CoinBoxDead";
                     }
                 if (numberOfHits == numberOfCoins)

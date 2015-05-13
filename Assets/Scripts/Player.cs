@@ -10,9 +10,11 @@ public class Player : MonoBehaviour
     public float jumpSpeed = 5f;
     public float jumpHeight;
     public float airSpeedMultiplier = .3f;
+    public int marioHealth = 1;
 
     private Animator anim;
     private PlayerController controller;
+
 
 
 
@@ -81,6 +83,14 @@ public class Player : MonoBehaviour
         }
 
         rb.AddForce(new Vector2(forceX, forceY));
+    }
+
+    public void MarioGrow()
+    {
+        if (marioHealth == 2)
+        {
+            anim.SetInteger("AnimState", 3);
+        }
     }
 
 

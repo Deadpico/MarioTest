@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: dbbde280aaeff514081656651beea9d6
-timeCreated: 1431272858
+timeCreated: 1431514526
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,7 @@ TextureImporter:
     21300010: smallCoin01
     21300012: smallCoin03
     21300014: coins-sprites_3
+    21300016: MushroomPowerUp
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -134,6 +135,16 @@ TextureImporter:
         y: 209
         width: 8
         height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MushroomPowerUp
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 16
+        height: 17
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
