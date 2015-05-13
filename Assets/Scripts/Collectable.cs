@@ -18,6 +18,7 @@ public class Collectable : MonoBehaviour {
         if (target.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            // add++ to coincounter
         }
     }
 }

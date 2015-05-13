@@ -35,13 +35,14 @@ public class SmallCoin : MonoBehaviour {
         
 	}
 
-   /* void OnTriggerEnter2D(Collider2D target)
+    void OnTriggerEnter2D(Collider2D target)
     {
         if (target.gameObject.tag == "CoinBox")
         {
-            rb.velocity = new Vector2(1,0);
+            //rb.velocity = new Vector2(transform.localScale.x,0) * speed;
+            Destroy(gameObject);
         }
-    }*/
+    }
 
     public void CoinGoDown()
     {

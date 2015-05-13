@@ -5,8 +5,10 @@ public class BoxTrigger : MonoBehaviour {
 
     public QuestionBlock block;
     public GameObject coinPrefab;
-    private SmallCoin Coin;
+    public int numberOfCoins;
 
+    private int numberOfHits;
+    private SmallCoin Coin;
     private float coinX = -0.722f;
     private float coinY = 0.55f;
     private float jumpSpeed = 0.3f;
@@ -21,19 +23,29 @@ public class BoxTrigger : MonoBehaviour {
 	void Update () {
 
 	}
+    
+        void OnTriggerEnter2D(Collider2D target)
+        {
+            if (target.gameObject.tag == "Player")
+            {
+                numberOfHits++;
 
-    void OnTriggerEnter2D(Collider2D target)
-    {
-        if (target.gameObject.tag == "Player")
-        {
-            block.ChangeBox();
-            Instantiate(coinPrefab, new Vector2(coinX, coinY), transform.rotation);
+                if(numberOfHits <= numberOfCoins){
+                Instantiate(coinPrefab, new Vector2(coinX, coinY), transform.rotation);
+                gameObject.tag = "CoinBoxDead";
+                    }
+                if (numberOfHits == numberOfCoins)
+                {
+                    block.ChangeBox();
+                }
+            }
+            /*
+            if (target.gameObject.tag == "Coin")
+            {
+                Coin.CoinGoDown();
+            } */
+         
         }
-        /*
-        if (target.gameObject.tag == "Coin")
-        {
-            Coin.CoinGoDown();
-        }
-         */
-    }
+    
 }
+
