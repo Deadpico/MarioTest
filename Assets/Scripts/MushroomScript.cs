@@ -5,13 +5,14 @@ public class MushroomScript : MonoBehaviour {
     public Transform sightStart, sightEnd;
     public bool needCollision = true;
     public float speed = .5f;
+    private Player playerClass;
 
     private bool collision = false;
-    private Player playerClass;
+    
 
 	// Use this for initialization
 	void Start () {
-	
+        playerClass = FindObjectOfType<Player>();
 	}
 	
 	// Update is called once per frame
@@ -38,8 +39,4 @@ public class MushroomScript : MonoBehaviour {
 
     }
 
-    void dies()
-    {
-        
-    }
 }

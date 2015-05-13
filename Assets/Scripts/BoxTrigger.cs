@@ -7,6 +7,7 @@ public class BoxTrigger : MonoBehaviour {
     public GameObject Prefab;
     public int numberOfCoins;
     public GameObject target;
+    
 
     private Transform _t;
     private int numberOfHits;

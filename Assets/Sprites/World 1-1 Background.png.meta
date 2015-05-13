@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 04f34ac75f0ee8146991b81b59967d2e
-timeCreated: 1431439128
+timeCreated: 1431534305
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -15,6 +15,10 @@ TextureImporter:
     21300016: World 1-1 Background_Hill02
     21300018: World 1-1 Background_BushSmall01
     21300020: Pipe
+    21300022: Pipe Medim
+    21300024: Pipe_Large
+    21300026: Pyramide_block
+    21300028: World 1-1 Background_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -123,9 +127,9 @@ TextureImporter:
     - name: World 1-1 Background_Hill01
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1533
         y: 23
-        width: 77
+        width: 79
         height: 35
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -167,6 +171,46 @@ TextureImporter:
         y: 24
         width: 32
         height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pipe Medim
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 23
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pipe_Large
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 23
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pyramide_block
+      rect:
+        serializedVersion: 2
+        x: 2189
+        y: 71
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: World 1-1 Background_0
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 23
+        width: 48
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

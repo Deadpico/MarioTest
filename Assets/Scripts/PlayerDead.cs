@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerDead : MonoBehaviour {
 
     public LevelManager levelMananger;
+    public Player playerClass;
 
 	// Use this for initialization
 	void Start () {
@@ -28,13 +29,16 @@ public class PlayerDead : MonoBehaviour {
     {
         if (target.gameObject.tag == "Deadly")
         {
-            levelMananger.RespawnPlayer();
-            //OnDie();
+            if (playerClass.marioHealth == 2)
+            {
+                playerClass.marioHealth--;
+                playerClass.MarioGrow();
+            }
+            else
+            {
+                levelMananger.RespawnPlayer();
+            }
         }
     }
 
-    void OnDie()
-    {
-        levelMananger.RespawnPlayer();
-    }
 }

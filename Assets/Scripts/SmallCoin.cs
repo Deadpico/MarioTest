@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SmallCoin : MonoBehaviour {
     public float jumpSpeed = 0.1f;
+    
 
     public Transform sightStart, sightEnd;
     public bool needCollision = true;
