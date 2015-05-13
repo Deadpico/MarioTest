@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: f041e20d0aca90849bdcae97ce8f163f
-timeCreated: 1430746285
+timeCreated: 1431547190
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: NES - Super Mario Bros - Title Screen_0
+    21300002: NES - Super Mario Bros - Title Screen_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,7 +50,17 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: NES - Super Mario Bros - Title Screen_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 104
+        width: 176
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

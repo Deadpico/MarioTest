@@ -36,7 +36,10 @@ public class PlayerDead : MonoBehaviour {
             }
             else
             {
-                levelMananger.RespawnPlayer();
+                // respawns palyer for bugtesting
+                //levelMananger.RespawnPlayer();
+
+                Application.LoadLevel(1);
             }
         }
     }
