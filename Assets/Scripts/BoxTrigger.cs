@@ -7,6 +7,10 @@ public class BoxTrigger : MonoBehaviour {
     public GameObject Prefab;
     public int numberOfCoins;
     public GameObject target;
+    //public AudioSource[] sounds;
+   // public AudioSource coinSound;
+    //public AudioSource mushroom;
+   
     
 
     private Transform _t;
@@ -21,6 +25,10 @@ public class BoxTrigger : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         _t = target.transform;
+        //sounds = GetComponents<AudioSource>();
+     //   coinSound = GetComponent<AudioSource>();
+       // mushroom = GetComponent<AudioSource>();
+        
 	}
 	
 	// Update is called once per frame
@@ -30,6 +38,7 @@ public class BoxTrigger : MonoBehaviour {
     
         void OnTriggerEnter2D(Collider2D target)
         {
+            
             if (target.gameObject.tag == "Player")
             {
                 numberOfHits++;
@@ -37,6 +46,7 @@ public class BoxTrigger : MonoBehaviour {
                 if(numberOfHits <= numberOfCoins){
                 Instantiate(Prefab, new Vector2(_t.position.x, _t.position.y+0.2f), transform.rotation);
                 gameObject.tag = "CoinBoxDead";
+                GetComponent<AudioSource>().Play();
                     }
                 if (numberOfHits == numberOfCoins)
                 {

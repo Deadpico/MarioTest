@@ -4,13 +4,20 @@ using System.Collections;
 public class BrickBoxDestroy : MonoBehaviour {
 
     public GameObject block;
-
+    public AudioSource[] sounds;
+    public AudioSource marioBig;
+    public AudioSource marioSmall;
+    public SpriteRenderer noRend;
+   
     private Player playerClass;
 
     // Use this for initialization
     void Start()
     {
         playerClass = FindObjectOfType<Player>();
+        sounds = GetComponents<AudioSource>();
+        marioSmall = sounds[0];
+        marioBig = sounds[1];
     }
 
     // Update is called once per frame
@@ -24,7 +31,14 @@ public class BrickBoxDestroy : MonoBehaviour {
         if (target.gameObject.tag == "Player")
             if(playerClass.marioHealth == 2)
              {
-                Destroy(block);
+                marioBig.Play();
+                noRend = (SpriteRenderer)GetComponentInParent(typeof(SpriteRenderer));
+                noRend.enabled = false;
+                Destroy(block, 1f);
+             }
+            else if (playerClass.marioHealth == 1)
+            {
+                marioSmall.Play();
             }
 
     }
