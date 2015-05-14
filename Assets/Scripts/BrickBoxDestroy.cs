@@ -15,8 +15,6 @@ public class BrickBoxDestroy : MonoBehaviour
     void Start()
     {
         playerClass = FindObjectOfType<Player>();
-        marioSmall = GetComponent<AudioSource>();
-        marioBig = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

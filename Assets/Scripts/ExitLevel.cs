@@ -4,6 +4,7 @@ using System.Collections;
 public class ExitLevel : MonoBehaviour {
 
     public string scene;
+    public AudioSource winGame;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +20,16 @@ public class ExitLevel : MonoBehaviour {
     {
         if (target.gameObject.tag == "Player")
         {
+            winGame.Play();
             Destroy(target.gameObject);
-            Application.LoadLevel(scene);
+            StartCoroutine(LoadLevel(scene));
+            
         }
+    }
+
+    IEnumerator LoadLevel(string scene)
+    {
+        yield return new WaitForSeconds(7);
+        Application.LoadLevel(scene);
     }
 }
