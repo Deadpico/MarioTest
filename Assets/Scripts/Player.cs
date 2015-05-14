@@ -11,10 +11,13 @@ public class Player : MonoBehaviour
     public float jumpHeight;
     public float airSpeedMultiplier = .3f;
     public int marioHealth = 1;
+    public AudioSource smallJump;
+    public AudioSource superJump;
 
     private Animator anim;
     private PlayerController controller;
     private bool bigMario = false;
+    private Player playerClass;
 
 
 
@@ -25,6 +28,7 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         controller = GetComponent<PlayerController>();
+        playerClass = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -76,6 +80,15 @@ public class Player : MonoBehaviour
             {
                 //rb.velocity = new Vector2(rb.position.x, jumpHeight);  
                 rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+                if (playerClass.marioHealth == 1)
+                {
+                    smallJump.Play();
+                }
+                else if (playerClass.marioHealth == 2)
+                {
+                    superJump.Play();
+                }
+                
             }
         }
         if (grounded == false)

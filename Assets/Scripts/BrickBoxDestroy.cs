@@ -1,23 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BrickBoxDestroy : MonoBehaviour {
+public class BrickBoxDestroy : MonoBehaviour
+{
 
     public GameObject block;
-    public AudioSource[] sounds;
-    public AudioSource marioBig;
     public AudioSource marioSmall;
+    public AudioSource marioBig;
     public SpriteRenderer noRend;
-   
+
     private Player playerClass;
 
     // Use this for initialization
     void Start()
     {
         playerClass = FindObjectOfType<Player>();
-        sounds = GetComponents<AudioSource>();
-        marioSmall = sounds[0];
-        marioBig = sounds[1];
+        marioSmall = GetComponent<AudioSource>();
+        marioBig = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,17 +28,20 @@ public class BrickBoxDestroy : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D target)
     {
         if (target.gameObject.tag == "Player")
-            if(playerClass.marioHealth == 2)
-             {
+        {
+            if (playerClass.marioHealth == 2)
+            {
                 marioBig.Play();
                 noRend = (SpriteRenderer)GetComponentInParent(typeof(SpriteRenderer));
                 noRend.enabled = false;
                 Destroy(block, 1f);
-             }
-            else if (playerClass.marioHealth == 1)
+            }
+            else
             {
                 marioSmall.Play();
             }
 
+        }
     }
+
 }

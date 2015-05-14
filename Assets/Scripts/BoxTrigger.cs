@@ -7,9 +7,7 @@ public class BoxTrigger : MonoBehaviour {
     public GameObject Prefab;
     public int numberOfCoins;
     public GameObject target;
-    //public AudioSource[] sounds;
-   // public AudioSource coinSound;
-    //public AudioSource mushroom;
+
    
     
 
@@ -25,9 +23,7 @@ public class BoxTrigger : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         _t = target.transform;
-        //sounds = GetComponents<AudioSource>();
-     //   coinSound = GetComponent<AudioSource>();
-       // mushroom = GetComponent<AudioSource>();
+       
         
 	}
 	

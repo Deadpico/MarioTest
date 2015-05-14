@@ -5,6 +5,7 @@ public class PlayerDead : MonoBehaviour {
 
     public LevelManager levelMananger;
     public Player playerClass;
+    public AudioSource dyingInAgony;
 
 	// Use this for initialization
 	void Start () {
@@ -38,10 +39,17 @@ public class PlayerDead : MonoBehaviour {
             {
                 // respawns palyer for bugtesting
                 //levelMananger.RespawnPlayer();
+                dyingInAgony.Play();
 
-                Application.LoadLevel(1);
+                StartCoroutine(LoadLevel(1));
             }
         }
+    }
+
+    IEnumerator LoadLevel(float delay)
+    {
+        yield return new WaitForSeconds(4);
+        Application.LoadLevel(1);
     }
 
 }

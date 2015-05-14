@@ -36,6 +36,7 @@ public class GoombaScript : MonoBehaviour {
         {
             float height = colli.contacts[0].point.y - weakness.position.y;
             if(height>0){
+                GetComponent<AudioSource>().Play();
                 colli.rigidbody.AddForce(new Vector2(0, 100));
                 dies();
             }
