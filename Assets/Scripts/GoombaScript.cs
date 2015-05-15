@@ -35,14 +35,23 @@ public class GoombaScript : MonoBehaviour {
         if (colli.gameObject.tag == "Player")
         {
             float height = colli.contacts[0].point.y - weakness.position.y;
-            if(height>0){
+            if (height > 0)
+            {
                 GetComponent<AudioSource>().Play();
                 colli.rigidbody.AddForce(new Vector2(0, 100));
                 dies();
             }
         }
-        
-    }
+        if (colli.gameObject.tag == "Pit")
+        {
+            
+                GetComponent<AudioSource>().Play();
+               // colli.rigidbody.AddForce(new Vector2(0, 100));
+                dies();
+            }
+
+        }
+    
 
     void dies()
     {
