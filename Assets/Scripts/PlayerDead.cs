@@ -42,9 +42,11 @@ public class PlayerDead : MonoBehaviour {
                 //levelMananger.RespawnPlayer();
                 mainTheme.Pause();
                 dyingInAgony.Play();
-
-
+                GetComponent<Player>().enabled = false;
+                GetComponent<PlayerController>().enabled = false;
+                GetComponent<SpriteRenderer>().enabled = false;
                 StartCoroutine(LoadLevel(1));
+                
             }
         }
     }
