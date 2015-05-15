@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public int marioHealth = 1;
     public AudioSource smallJump;
     public AudioSource superJump;
+    public AudioSource powerUp;
 
     private Animator anim;
     private PlayerController controller;
@@ -106,6 +107,7 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("MarioBig", true);
             GetComponent<BoxCollider2D>().size = new Vector3(0.15f, 0.32f, transform.position.z);
+            powerUp.Play();
         }
         else
         {
