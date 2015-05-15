@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BoxTrigger : MonoBehaviour {
+public class BoxTrigger : MonoBehaviour
+{
 
     public QuestionBlock block;
     public GameObject Prefab;
     public int numberOfCoins;
     public GameObject target;
 
-   
-    
+
+
 
     private Transform _t;
     private int numberOfHits;
@@ -19,43 +20,38 @@ public class BoxTrigger : MonoBehaviour {
     private float jumpSpeed = 0.3f;
     private Rigidbody2D rb;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
         _t = target.transform;
-       
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
 
-	}
-    
-        void OnTriggerEnter2D(Collider2D target)
+
+    }
+
+
+
+    void OnTriggerEnter2D(Collider2D target)
+    {
+
+        if (target.gameObject.tag == "Player")
         {
-            
-            if (target.gameObject.tag == "Player")
-            {
-                numberOfHits++;
+            numberOfHits++;
 
-                if(numberOfHits <= numberOfCoins){
-                Instantiate(Prefab, new Vector2(_t.position.x, _t.position.y+0.2f), transform.rotation);
+            if (numberOfHits <= numberOfCoins)
+            {
+                Instantiate(Prefab, new Vector2(_t.position.x, _t.position.y + 0.2f), transform.rotation);
                 gameObject.tag = "CoinBoxDead";
                 GetComponent<AudioSource>().Play();
-                    }
-                if (numberOfHits == numberOfCoins)
-                {
-                    block.ChangeBox();
-                }
             }
-            /*
-            if (target.gameObject.tag == "Coin")
+            if (numberOfHits == numberOfCoins)
             {
-                Coin.CoinGoDown();
-            } */
-         
+                block.ChangeBox();
+            }
         }
-    
+
+
+    }
+
 }
 

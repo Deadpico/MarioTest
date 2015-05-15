@@ -18,9 +18,9 @@ public class Timer : MonoBehaviour {
         timeLeft -= Time.deltaTime;
         seconds = (int)timeLeft % 60;
         minutes = (int)timeLeft / 60;
-        //timeUI.text = minutes + ":" + seconds;
-        timeUI.text = minutes + ":" + seconds; 
-       //GetComponent<GUIText>().text = minutes + ":" + seconds;
+        timeUI.text = minutes + ":" + seconds;
+
+        
 
 
 	
