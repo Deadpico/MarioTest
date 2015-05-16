@@ -8,7 +8,7 @@ public class PlayerDead : MonoBehaviour
     public Player playerClass;
     public AudioSource dyingInAgony;
     public AudioSource mainTheme;
-    public GameObject timeIsOut;
+    //public GameObject timeIsOut;
 
     private float currentTime;
 
@@ -20,8 +20,8 @@ public class PlayerDead : MonoBehaviour
 
     void Update()
     {
-        Timer.timeLeft = currentTime;
-        checkTimer(currentTime);
+        //Timer.timeLeft = currentTime;
+        //checkTimer(currentTime);
     }
 
 
@@ -53,13 +53,13 @@ public class PlayerDead : MonoBehaviour
         
     }
 
-    void checkTimer(float currentTime)
-    {
-        if (currentTime < 0)
-        {
-            onDie();
-        }
-    }
+    //void checkTimer(float currentTime)
+    //{
+    //    if (currentTime < 0)
+    //    {
+    //        onDie();
+    //    }
+    //}
 
     void onDie()
     {

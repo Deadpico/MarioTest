@@ -3,15 +3,19 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class Timer : MonoBehaviour {
-    public static float timeLeft;
+    public float timeLeft;
     private Text timeUI;
     private int seconds;
     private int minutes;
+   
 
 	// Use this for initialization
 	void Start () {
-        timeLeft = 5f;
+        
         timeUI = GetComponent<Text>();
+       
+
+
 	}
 	
 	// Update is called once per frame
@@ -19,13 +23,14 @@ public class Timer : MonoBehaviour {
         timeLeft -= Time.deltaTime;
         seconds = (int)timeLeft % 60;
         minutes = (int)timeLeft / 60;
+        timeUI.text = minutes + ":" + seconds;
 
         if (timeLeft < 0)
         {
             timeLeft = 0;
         }
 
-        timeUI.text = minutes + ":" + seconds;
+        
 
         
 
