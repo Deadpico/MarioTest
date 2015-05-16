@@ -8,6 +8,9 @@ public class PlayerDead : MonoBehaviour
     public Player playerClass;
     public AudioSource dyingInAgony;
     public AudioSource mainTheme;
+    public GameObject timeIsOut;
+
+    private float currentTime;
 
     // Use this for initialization
     void Start()
@@ -15,6 +18,11 @@ public class PlayerDead : MonoBehaviour
         levelMananger = FindObjectOfType<LevelManager>();
     }
 
+    void Update()
+    {
+        Timer.timeLeft = currentTime;
+        checkTimer(currentTime);
+    }
 
 
     void OnCollisionEnter2D(Collision2D target)
@@ -37,6 +45,19 @@ public class PlayerDead : MonoBehaviour
               
 
             }
+        }
+
+        
+       
+
+        
+    }
+
+    void checkTimer(float currentTime)
+    {
+        if (currentTime < 0)
+        {
+            onDie();
         }
     }
 

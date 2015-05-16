@@ -35,11 +35,21 @@ public class MushroomScript : MonoBehaviour
     {
         if (colli.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
-            playerClass.marioHealth++;
-            playerClass.MarioGrow();
+
+            if (playerClass.marioHealth == 1)
+            {
+                Destroy(this.gameObject);
+                playerClass.marioHealth++;
+                playerClass.MarioGrow();
+
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
 
     }
-
 }
+
+

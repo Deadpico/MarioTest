@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
                 {
                     superJump.Play();
                 }
-                
+
             }
         }
         if (grounded == false)
@@ -102,14 +102,14 @@ public class Player : MonoBehaviour
 
     public void MarioGrow()
     {
-        
+
         if (marioHealth == 2)
         {
             anim.SetBool("MarioBig", true);
             GetComponent<BoxCollider2D>().size = new Vector3(0.15f, 0.32f, transform.position.z);
             powerUp.Play();
         }
-        else
+        else if(marioHealth == 1)
         {
             anim.SetBool("MarioBig", false);
             GetComponent<BoxCollider2D>().size = new Vector3(0.15f, 0.16f, transform.position.z);
